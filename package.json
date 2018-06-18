@@ -7,19 +7,34 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "ember build",
-    "start": "ember server",
-    "test": "ember test"
+    "build:prod": "npm run webpack-prod",
+    "watch": "npm run watch-webpack",
+    "watch-webpack": "webpack-dev-server --env.dev --mode=development",
+    "webpack-prod": "webpack -p --env.prod --mode=production"
   },
   "devDependencies": {
-    "@glimmer/application": "^0.4.0",
-    "@glimmer/application-pipeline": "^0.5.1",
-    "@glimmer/component": "^0.3.8",
-    "@glimmer/resolver": "^0.3.0",
+    "@types/d3-scale": "^2.0.1",
+    "@types/glob": "^5.0.35",
+    "@types/node": "^8.9.1",
+    "@types/uglifyjs-webpack-plugin": "^1.1.0",
+    "@types/webpack": "^4.4.0",
+    "@types/webpack-bundle-analyzer": "^2.9.2",
+    "compression-webpack-plugin": "^1.1.11",
     "d3-scale": "^1.0.5",
-    "ember-cli": "2.12.1",
-    "ember-cli-inject-live-reload": "^1.6.1",
-    "typescript": "^2.2.2"
+    "node-sass": "^4.9.0",
+    "s-array": "^0.4.9",
+    "s-js": "^0.4.8",
+    "surplus": "^0.5.2",
+    "surplus-loader": "^0.5.0",
+    "surplus-mixin-data": "^0.5.0",
+    "ts-loader": "^4.3.0",
+    "ts-node": "^4.1.0",
+    "typescript": "^2.2.2",
+    "webpack": "^4.1.1",
+    "webpack-bundle-analyzer": "^2.13.1",
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "^3.1.1",
+    "webpack-typescript": "^0.5.6"
   },
   "engines": {
     "node": ">= 4.0"

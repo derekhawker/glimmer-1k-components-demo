@@ -1,15 +1,41 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "es2015",
-    "inlineSourceMap": true,
-    "inlineSources": true,
-    "moduleResolution": "node",
-    "experimentalDecorators": true
+    "baseUrl": "./",
+    "experimentalDecorators": true,
+    "jsx": "preserve",
+    "jsxFactory": "Surplus",
+    "keyofStringsOnly": true,
+    "lib": ["dom", "es2015.iterable", "scripthost", "es6"],
+    "module": "commonjs",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "outDir": "./out/",
+    "paths": {
+      "*": ["typings/*"]
+    },
+    "preserveConstEnums": false,
+    "removeComments": true,
+    "rootDirs": [
+      ".",
+      "../util/src"
+    ],
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "target": "es5",
+    "typeRoots": ["node_modules/@types", "typings"],
+    "types": []
   },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "typings/**/*"
+  ],
   "exclude": [
-    "node_modules",
-    "tmp",
-    "dist"
+    "node_modules/**/*",
+    "src/test.ts"
   ]
 }

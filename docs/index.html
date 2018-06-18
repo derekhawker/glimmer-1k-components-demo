@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Glimmer 1k+ Components Demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+            width: 100%;
+            height: 100%;
+            background: #111;
+        }
+
+        .demo {
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .point {
+            width: 5px;
+            height: 5px;
+            background: black;
+            position: absolute;
+        }
+
+        .controls {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px;
+            background: #333;
+            border-bottom: 1px solid #666;
+            display: flex;
+            justify-content: center;
+            color: white;
+        }
+
+        .control input {
+            margin: 0 10px;
+            width: 300px;
+        }
+
+        #stats {
+            position: fixed;
+            top: 0;
+            right: 0;
+        }
+
+        .about {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 10px;
+        }
+
+        #root, .app-wrapper, .demo {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="root"></div>
+<div id="stats"></div>
+<script src="index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.js"></script>
+<script>
+  var stats = new Stats();
+  stats.showPanel(0);
+  document.getElementById('stats').appendChild(stats.domElement);
+  stats.begin();
+
+  function animate() {
+    stats.update();
+    requestAnimationFrame(animate);
+  }
+
+  requestAnimationFrame(animate);
+</script>
+</body>
+</html>
